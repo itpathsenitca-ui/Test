@@ -1,0 +1,5 @@
+*.yml
+*.jpg
+.venv1
+.venv
+.idea

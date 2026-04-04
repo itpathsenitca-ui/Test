@@ -1,0 +1,20 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+file_name = 'hands1.csv'
+df = pd.read_csv(file_name, skiprows=2, names=['time', 'distance'])
+df['distance'] = pd.to_numeric(df['distance'])
+df.dropna(inplace=True)
+print(df.describe())
+plt.figure(figsize=(10,5))
+plt.plot(df['time'], df['distance'])
+plt.title('Измерения сонара')
+plt.xlabel('Время (с)')
+plt.ylabel('Расстояние (см)')
+plt.grid(True)
+plt.show()
+plt.figure(figsize=(10,4))
+plt.hist(df['distance'], bins=30, color='skyblue')
+plt.title('Распределение измерения расстояний')
+plt.xlabel('частота')
+plt.grid(True,alpha=0.3)
+plt.show()
