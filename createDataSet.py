@@ -6,6 +6,7 @@ detector = FaceDetector(minDetectionCon=0.7)
 saveInterval = 0.5
 lastTime = time.time()
 countImg = 0
+print(countImg)
 basicDirectory = "dataset502"
 folderName = "Maxim"
 path = os.path.join(basicDirectory, folderName)
